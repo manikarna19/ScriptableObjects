@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEventListener :ScriptableObject
+public class GameEventListener :MonoBehaviour
 {
     public GameEvent GameEventName;
     public UnityEvent Response;
