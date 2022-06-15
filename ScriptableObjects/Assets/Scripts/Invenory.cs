@@ -5,12 +5,17 @@ using UnityEngine;
 public class Invenory : MonoBehaviour
 {
     public GameEvent gameEvent;
-    public GameEventListener gameEventListener;
+    public GameEvent APressed;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            gameEventListener.OnEventRaised();
+            Debug.Log(" space has ben pressed");
+            gameEvent.RaiseEvent();
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            APressed.RaiseEvent();
         }
         
     }
