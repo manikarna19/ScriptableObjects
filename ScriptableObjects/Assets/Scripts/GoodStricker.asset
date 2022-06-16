@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c70abdf38ccec949871e2fdf076915d, type: 3}
   m_Name: GoodStricker
   m_EditorClassIdentifier: 
+  itemHub: {fileID: 11400000, guid: 3f8d675eeb0372941b5b1f026393929a, type: 2}
   Stricker: {fileID: 4641752605436236423, guid: d164c62e3780b2b45929a5eeb3de99ac,
     type: 3}
   ItsTexture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
   AimingHelp: 10
+  isSelected: 0

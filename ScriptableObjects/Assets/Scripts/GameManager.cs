@@ -1,15 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-public void OnSpaceButtonClicked()
+public void OnNextSceneButtonClicked()
     {
-        Debug.Log(" You have Pressed Space And it is Working");
-    }
-    public void OnAClicked()
-    {
-        Debug.Log(" You have Pressed aaaaaaaaAAAAaa And it is Working");
+        SceneManager.LoadScene(1);
     }
 }

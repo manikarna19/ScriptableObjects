@@ -4,11 +4,19 @@ using UnityEngine;
 [CreateAssetMenu()]
 public  class Item :ScriptableObject
 {
+    public ItemHub itemHub;
     public GameObject Stricker;
     public Texture ItsTexture;
     public float AimingHelp;
-    public void OnThisStrickerSelected()
+    public bool isSelected;
+    public void OnSelectStricker()
     {
-
+        itemHub.ReSelected();
+        isSelected = true;
     }
+    public void DeSelectSricker()
+    {
+        isSelected = false;
+    }
+
 }
