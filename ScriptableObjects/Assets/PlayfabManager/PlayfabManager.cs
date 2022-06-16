@@ -12,10 +12,11 @@ public class PlayfabManager :ScriptableObject
 {
     public string UserName, Email, MyPassword,MyPlayfabID;
     public bool isNewlyCreated,isRegistered,isLogin;
-
+    public string ErrorMessage;
+    public GameEvent RegisterFailed;
     #region Registeration
 
-    public void RegisterToPlayfab(string Username,string Email,string Password,string ConfirmPassword)
+    public void RegisterToPlayfab(string Username,string Email,string Password)
     {
         MyPassword = Password;
         var request = new RegisterPlayFabUserRequest
@@ -32,6 +33,8 @@ public class PlayfabManager :ScriptableObject
     private void OnRegisterFailed(PlayFabError obj)
     {
         Debug.Log("On RegisterFailed because   " + obj);
+        ErrorMessage = obj.ToString();
+        RegisterFailed.RaiseEvent();
     }
 
     private void OnRegisterSuccess(RegisterPlayFabUserResult obj)

@@ -9,15 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c38c5ddb5c89503488139b8269b5ac8b, type: 3}
-  m_Name: MyPlayfab
+  m_Script: {fileID: 11500000, guid: c372b3830cf321a47ae506efe7528934, type: 3}
+  m_Name: RegisterFailed
   m_EditorClassIdentifier: 
-  UserName: 
-  Email: 
-  MyPassword: 
-  MyPlayfabID: 
-  isNewlyCreated: 0
-  isRegistered: 0
-  isLogin: 0
-  ErrorMessage: 
-  RegisterFailed: {fileID: 0}
