@@ -20,4 +20,4 @@ MonoBehaviour:
   isRegistered: 0
   isLogin: 0
   ErrorMessage: 
-  RegisterFailed: {fileID: 0}
+  RegisterFailed: {fileID: 11400000, guid: 254489fd51649bf4ebcf438f4078df22, type: 2}

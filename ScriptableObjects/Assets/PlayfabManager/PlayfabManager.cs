@@ -14,6 +14,8 @@ public class PlayfabManager :ScriptableObject
     public bool isNewlyCreated,isRegistered,isLogin;
     public string ErrorMessage;
     public GameEvent RegisterFailed;
+
+
     #region Registeration
 
     public void RegisterToPlayfab(string Username,string Email,string Password)
@@ -43,6 +45,11 @@ public class PlayfabManager :ScriptableObject
         obj.PlayFabId = MyPlayfabID;
         isRegistered = true;
     }
+
+    #endregion
+
+    #region Login
+
 
     #endregion
 

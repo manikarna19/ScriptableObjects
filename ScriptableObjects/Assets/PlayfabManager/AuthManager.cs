@@ -60,7 +60,22 @@ public class AuthManager : MonoBehaviour
 
     public void ShowErrorMessage()
     {
-        StartCoroutine(DisplayRegisterWarningMsg(MyPlayfab.ErrorMessage));
+        if (MyPlayfab.ErrorMessage == "The display name entered is not available.")
+        {
+            StartCoroutine(DisplayRegisterWarningMsg(" UserName already exists. Please use a different one "));
+        }
+        else if (MyPlayfab.ErrorMessage == "Email address not available")
+        {
+            StartCoroutine(DisplayRegisterWarningMsg("Email address already exists. Please use a different one"));
+        }
+        else if (MyPlayfab.ErrorMessage == "Cannot resolve destination host")
+        {
+            StartCoroutine(DisplayRegisterWarningMsg(" Please check your internet connection."));
+        }
+        else
+        {
+            StartCoroutine(DisplayRegisterWarningMsg(MyPlayfab.ErrorMessage + " . Please Try again"));
+        }
     }
     private void OnApplicationQuit()
     {
