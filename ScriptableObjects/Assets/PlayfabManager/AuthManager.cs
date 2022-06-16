@@ -80,5 +80,6 @@ public class AuthManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         MyPlayfab.isLogin = false;
+        MyPlayfab.ErrorMessage = null;
     }
 }

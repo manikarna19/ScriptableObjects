@@ -10,7 +10,7 @@ using System;
 [CreateAssetMenu()]
 public class PlayfabManager :ScriptableObject
 {
-    public string UserName, Email, MyPassword,MyPlayfabID;
+    public string UserName, MyEmail, MyPassword,MyPlayfabID;
     public bool isNewlyCreated,isRegistered,isLogin;
     public string ErrorMessage;
     public GameEvent RegisterFailed;
@@ -21,10 +21,10 @@ public class PlayfabManager :ScriptableObject
     public void RegisterToPlayfab(string Username,string Email,string Password)
     {
         MyPassword = Password;
+        MyEmail = Email;
         var request = new RegisterPlayFabUserRequest
         {
-            DisplayName = UserName,
-            Username = UserName,
+            Username = Username,
             Email = Email,
             Password = Password,
             RequireBothUsernameAndEmail = true
@@ -35,14 +35,16 @@ public class PlayfabManager :ScriptableObject
     private void OnRegisterFailed(PlayFabError obj)
     {
         Debug.Log("On RegisterFailed because   " + obj);
+        ErrorMessage = "";
         ErrorMessage = obj.ToString();
         RegisterFailed.RaiseEvent();
     }
 
     private void OnRegisterSuccess(RegisterPlayFabUserResult obj)
     {
-        obj.Username = UserName;
-        obj.PlayFabId = MyPlayfabID;
+        Debug.Log(" registered Successfulluy");
+        UserName = obj.Username;
+        MyPlayfabID = obj.PlayFabId;
         isRegistered = true;
     }
 

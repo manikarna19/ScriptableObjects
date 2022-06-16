@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38c5ddb5c89503488139b8269b5ac8b, type: 3}
   m_Name: MyPlayfab
   m_EditorClassIdentifier: 
-  UserName: 
-  Email: 
-  MyPassword: 
-  MyPlayfabID: 
+  UserName: ding
+  MyEmail: ding@gmail.com
+  MyPassword: 123456
+  MyPlayfabID: A91AF4E9A67F4E33
   isNewlyCreated: 0
-  isRegistered: 0
+  isRegistered: 1
   isLogin: 0
   ErrorMessage: 
   RegisterFailed: {fileID: 11400000, guid: 254489fd51649bf4ebcf438f4078df22, type: 2}
