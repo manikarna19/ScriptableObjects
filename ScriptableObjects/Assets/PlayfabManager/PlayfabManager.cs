@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
-using UnityEngine.UI;
-using TMPro;
-using System;
+
+
 
 [CreateAssetMenu()]
 public class PlayfabManager :ScriptableObject
@@ -31,11 +28,22 @@ public class PlayfabManager :ScriptableObject
         };
         PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnRegisterFailed);
     }
+    public void RegisterToPlayfab()
+    {
+      
+        var request = new RegisterPlayFabUserRequest
+        {
+            Username = UserName,
+            Email = MyEmail,
+            Password = MyPassword,
+            RequireBothUsernameAndEmail = true
+        };
+        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnRegisterFailed);
+    }
 
     private void OnRegisterFailed(PlayFabError obj)
     {
         Debug.Log("On RegisterFailed because   " + obj);
-        ErrorMessage = "";
         ErrorMessage = obj.ToString();
         RegisterFailed.RaiseEvent();
     }
@@ -46,6 +54,7 @@ public class PlayfabManager :ScriptableObject
         UserName = obj.Username;
         MyPlayfabID = obj.PlayFabId;
         isRegistered = true;
+        ErrorMessage = "NoError";
     }
 
     #endregion
